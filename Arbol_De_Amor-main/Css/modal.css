@@ -1,0 +1,84 @@
+.initial-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.85);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(10px);
+  cursor: pointer;
+}
+
+.modal-content {
+  background: linear-gradient(135deg, #fff 0%, #ffe8e8 100%);
+  padding: 3em 2.5em;
+  border-radius: 20px;
+  box-shadow: 0 10px 40px rgba(230, 0, 38, 0.3);
+  text-align: center;
+  max-width: 400px;
+  animation: modalAppear 0.8s ease-out;
+  position: relative;
+}
+
+@keyframes modalAppear {
+  from {
+    opacity: 0;
+    transform: scale(0.8) translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.modal-heart {
+  font-size: 4rem;
+  margin-bottom: 0.5em;
+  animation: heartBeat 1.5s infinite;
+}
+
+@keyframes heartBeat {
+  0%, 100% { transform: scale(1); }
+  10% { transform: scale(1.1); }
+  20% { transform: scale(1); }
+  30% { transform: scale(1.15); }
+  40% { transform: scale(1); }
+}
+
+.modal-title {
+  font-family: 'Dancing Script', 'Pacifico', cursive, sans-serif;
+  font-size: 2rem;
+  color: #e60026;
+  margin-bottom: 0.8em;
+}
+
+.modal-message {
+  font-family: 'Georgia', serif;
+  font-size: 1.1rem;
+  color: #333;
+  line-height: 1.6;
+  margin-bottom: 1.2em;
+}
+
+.modal-button {
+  background: #e60026;
+  color: white;
+  border: none;
+  padding: 0.8em 2em;
+  border-radius: 50px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+  box-shadow: 0 4px 15px rgba(230, 0, 38, 0.3);
+}
+
+.modal-button:hover {
+  background: #c00020;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(230, 0, 38, 0.4);
+}

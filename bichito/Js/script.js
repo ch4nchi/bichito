@@ -315,6 +315,10 @@ function playBackgroundMusic() {
     player.id = 'music-player';
     player.className = 'music-player';
     
+    // Contenedor para info y controles
+    const musicContent = document.createElement('div');
+    musicContent.className = 'music-content';
+    
     const songInfo = document.createElement('div');
     songInfo.className = 'music-info';
     songInfo.id = 'song-title';
@@ -343,8 +347,9 @@ function playBackgroundMusic() {
     controls.appendChild(playBtn);
     controls.appendChild(nextBtn);
     
-    player.appendChild(songInfo);
-    player.appendChild(controls);
+    musicContent.appendChild(songInfo);
+    musicContent.appendChild(controls);
+    player.appendChild(musicContent);
     
     // Botón especial (siempre visible)
     const questionBtn = document.createElement('a');

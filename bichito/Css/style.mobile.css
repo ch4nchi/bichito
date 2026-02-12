@@ -108,3 +108,32 @@ body {
   height: 18px;
 }
 
+@media (max-width: 700px) {
+  body {
+    min-height: 180vh;
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 50px;
+  }
+  
+  .music-content {
+    flex: 1;
+  }
+  
+  .music-info {
+    max-width: 100%;
+    text-align: center;
+    font-size: 0.95rem;
+  }
+  
+  .music-controls {
+    justify-content: center;
+    width: 100%;
+  }
+  
+  .mobile-question-btn {
+    width: auto !important;
+    margin: 0;
+    padding: 12px !important;
+  }
+}

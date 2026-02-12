@@ -336,7 +336,7 @@ body {
     left: 50% !important;
     right: auto !important;
     position: absolute !important;
-    margin-top: 200px;
+    margin-top: 220px;
     transform: translateX(-50%) !important;
     background: rgba(255, 255, 255, 0.15);
     min-width: 280px;

@@ -3,6 +3,7 @@
 let firstClickDone = false;
 let canShowLetter = false;
 let letterFinished = false;
+let canShowImages = false;
 
 // Cargar el SVG y animar los corazones
 fetch('Img/treelove.svg')
@@ -438,6 +439,9 @@ function showRandomNebulaImages() {
   ];
   
   function createNebulaImage() {
+    // No mostrar imágenes durante los primeros 40 segundos
+    if (!canShowImages) return;
+    
     const treeContainer = document.getElementById('tree-container');
     if (!treeContainer) return;
     
@@ -527,18 +531,22 @@ function showRandomNebulaImages() {
 
 // Permitir crear imágenes con click
 document.addEventListener('click', function(e) {
-  // Primer click: activar el timer de 6 segundos para mostrar la carta
+  // Primer click: activar el timer de 8 segundos para mostrar la carta
   if (!firstClickDone) {
     firstClickDone = true;
     setTimeout(() => {
       canShowLetter = true;
       showDedicationText();
-    }, 6000);
+    }, 8000);
+    // Permitir imágenes después de 49 segundos
+    setTimeout(() => {
+      canShowImages = true;
+    }, 49000);
     return; // No crear imagen en el primer click
   }
   
-  // No permitir crear imágenes mientras la carta se está escribiendo
-  if (canShowLetter && !letterFinished) {
+  // No permitir crear imágenes mientras la carta se está escribiendo o durante los primeros 40 segundos
+  if ((canShowLetter && !letterFinished) || !canShowImages) {
     return;
   }
   
